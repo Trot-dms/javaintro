@@ -2,11 +2,13 @@
 package sda.code.intermediate.part2.answers.json.gson;
 
 import java.util.List;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class WeatherGson {
 
@@ -18,7 +20,7 @@ public class WeatherGson {
     private Sys sys;
     @SerializedName("weather")
     @Expose
-    private List<Weather_> weather = null;
+    private List<WeatherDetails> weather = null;
     @SerializedName("main")
     @Expose
     private Main main;
@@ -85,7 +87,7 @@ public class WeatherGson {
      * @return
      *     The weather
      */
-    public List<Weather_> getWeather() {
+    public List<WeatherDetails> getWeather() {
         return weather;
     }
 
@@ -94,7 +96,7 @@ public class WeatherGson {
      * @param weather
      *     The weather
      */
-    public void setWeather(List<Weather_> weather) {
+    public void setWeather(List<WeatherDetails> weather) {
         this.weather = weather;
     }
 

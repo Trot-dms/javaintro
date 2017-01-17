@@ -1,13 +1,14 @@
 
 package sda.code.intermediate.part2.answers.json.gson;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class Weather_ {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class WeatherDetails {
 
     @SerializedName("id")
     @Expose
@@ -109,10 +110,10 @@ public class Weather_ {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Weather_) == false) {
+        if ((other instanceof WeatherDetails) == false) {
             return false;
         }
-        Weather_ rhs = ((Weather_) other);
+        WeatherDetails rhs = ((WeatherDetails) other);
         return new EqualsBuilder().append(id, rhs.id).append(main, rhs.main).append(description, rhs.description).append(icon, rhs.icon).isEquals();
     }
 

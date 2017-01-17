@@ -4,15 +4,17 @@ package sda.code.intermediate.part2.answers.json.jackson;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -35,7 +37,7 @@ public class WeatherJackson {
     @JsonProperty("sys")
     private Sys sys;
     @JsonProperty("weather")
-    private List<Weather_> weather = null;
+    private List<WeatherDetails> weather = null;
     @JsonProperty("main")
     private Main main;
     @JsonProperty("wind")
@@ -101,7 +103,7 @@ public class WeatherJackson {
      *     The weather
      */
     @JsonProperty("weather")
-    public List<Weather_> getWeather() {
+    public List<WeatherDetails> getWeather() {
         return weather;
     }
 
@@ -111,7 +113,7 @@ public class WeatherJackson {
      *     The weather
      */
     @JsonProperty("weather")
-    public void setWeather(List<Weather_> weather) {
+    public void setWeather(List<WeatherDetails> weather) {
         this.weather = weather;
     }
 

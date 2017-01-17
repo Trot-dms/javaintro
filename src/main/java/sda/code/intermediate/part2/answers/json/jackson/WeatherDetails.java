@@ -3,15 +3,17 @@ package sda.code.intermediate.part2.answers.json.jackson;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -20,7 +22,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "description",
     "icon"
 })
-public class Weather_ {
+public class WeatherDetails {
 
     @JsonProperty("id")
     private Integer id;
@@ -138,10 +140,10 @@ public class Weather_ {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Weather_) == false) {
+        if ((other instanceof WeatherDetails) == false) {
             return false;
         }
-        Weather_ rhs = ((Weather_) other);
+        WeatherDetails rhs = ((WeatherDetails) other);
         return new EqualsBuilder().append(id, rhs.id).append(main, rhs.main).append(description, rhs.description).append(icon, rhs.icon).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
